@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --color-primary: #6c63ff;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f82104;
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg: #141414;
+    --color-bg1: #303030;
+    --color-bg2: #009ccc;
+
+   --container-width-lg: 76%;
+   --container-width-md: 90%;
+   --container-width-sm: 94%;
+
+   --transition: all 400ms ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar{
+    height: 100%;
+    width: 78px;
+    background: var(--color-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active{
+    width: 300px;
+} 
+
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.1s ease;
+}
+
+.sidebar .logo_content .logo{
+    color: var(--color-white);
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.logo_content .logo i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: var(--color-white);
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar #btn:hover{
+    color: var(--color-bg2);
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: var(--color-bg1);
+    padding-left: 50px;
+    font-size: 15px;
+    color: var(--color-white);
+}
+
+.sidebar ul li .bx-search{
+    position: relative;
+    z-index: 99;
+    color: var(--color-white);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.sidebar ul li .bx-search:hover{
+    background: var(--color-white);
+    color: var(--color-bg2);
+}
+
+.sidebar ul li a{
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+    color: var(--color-bg2);
+    background: var(--color-white);
+}
+
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .nav_list{
+    padding: 0;
+    margin-top: 10%;
+}
+
+.sidebar .profile_content{
+    position: absolute;
+    color: var(--color-white);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.5s ease;
+    background: none;
+}
+
+.sidebar .profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 10px;
+}
+
+.profile .profile_details .name{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.sidebar.active .profile_content .profile{
+    background: var(--color-bg1);
+}
+
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile_details .job{
+    font-size: 10px;
+}
+
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+a.form{
+    color: var(--color-white);
+}
+
+a.form:hover{
+    color: var(--color-bg2);
+}
+
+.sidebar.active .profile #log_out{
+    left: 93%;
+    background: none;
+}
+
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+.home_content h4{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--color-black);
+    margin: 12px;
+}
+
+.sidebar.active ~ .home_content{
+    width: calc(100% - 300px);
+    left: 300px;
+}
+
+/* TABLE SECTION */
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+.content-table thead tr{
+    background-color: var(--color-bg2);
+    color: var(--color-white);
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid var(--color-bg2);
+}
